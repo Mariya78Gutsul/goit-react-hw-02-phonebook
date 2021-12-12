@@ -36,9 +36,10 @@ export default class App extends Component {
     }
   };
 
-  changeFilter = (filter) => {
-    this.setState({ filter });
-  };
+  // changeFilter = (filter) => {
+  //   this.setState({ filter });
+  //   console.log(changeFilter);
+  // };
 
   getVisibleContacts = () => {
     const { contacts, filter } = this.state;
@@ -47,6 +48,7 @@ export default class App extends Component {
       contacts.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+  changeFilter = (e) => this.setState({ filter: e.taget.value });
 
   removeContact = (contactId) => {
     this.setState((prevState) => {
