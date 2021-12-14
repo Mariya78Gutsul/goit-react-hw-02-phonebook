@@ -70,11 +70,13 @@ export default class App extends Component {
         {visibleContacts.length > 1 && (
           <Filter value={filter} onChangeFilter={this.changeFilter} />
         )}
-        {visibleContacts.length > 0 && (
+        {visibleContacts.length > 0 ? (
           <ContactList
             contacts={visibleContacts}
             onRemoveContact={this.removeContact}
           />
+        ) : (
+          <p>Yuor phonebook is empty. Please add contact.</p>
         )}
       </div>
     );
